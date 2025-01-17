@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Menghindari akses langsung ke file .env dan file lainnya yang sensitif
+    RewriteRule ^\.env$ - [F]
+    RewriteRule ^\.git/ - [F]
+
+    # Redirect URL yang dimulai dengan public ke root folder Laravel
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ /public/$1 [L]
+
+    # Laravel's Front Controller (public/index.php)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>

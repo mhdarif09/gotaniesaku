@@ -1,0 +1,26 @@
+{
+    "name": "webkul/midtrans",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jitendra Singh",
+            "email": "jitendra@webkul.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+    "psr-4": {
+        "Webkul\\Midtrans\\": "packages/Webkul/Midtrans/src/"
+    }
+}
+,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webkul\\Midtrans\\Providers\\MidtransServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}
